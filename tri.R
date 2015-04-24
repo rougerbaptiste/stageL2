@@ -87,6 +87,8 @@ for(annee in annees){
 							famille <- "F-31-8"
 						}else if(progeniteur =="F-31-2-2-8-8-4-16"){
 							famille <- "F-31-7"
+						}else if(fam[3] == "5"){
+							famille <- "F-31"
 						}else if(fam[4] == "16"){
 							famille <- "F-31-7"
 						}else if(fam[4] == "17"){
@@ -143,8 +145,8 @@ for(annee in annees){
 							famille <- "F-31-8"
 						}else if(progeniteur =="F-31-2-2-8-8-4-16"){
 							famille <- "F-31-7"
-						}else if(progeniteur =="F-31-3-5-2-7-5-4"){
-							famille <- "F-31-7"
+						}else if(annee==2002){
+							famille <- "F-31"
 						}else if(fam[4] == "16"){
 							famille <- "F-31-7"
 						}else if(fam[4] == "17"){

@@ -15,6 +15,9 @@ f27 <- selectF27[!is.na(selectF27)]
 f27 <- c(f27, rep(NA, 3))
 
 ## F31...
+selectF31 <- moyennes[moyennes[,2]=="F-31",3]
+f31 <- selectF31[is.na(selectF31)]
+
 
 selectF36 <-  moyennes[moyennes[,2]=="F-36",3]
 f36 <- selectF36[!is.na(selectF36)]
@@ -56,6 +59,7 @@ plot(
 	main="Représentation pour chaque famille de la variation\n de la taille en fonction de l'année"
 )
 lines(f27 ~ absc, type = "l", col="red")
+lines(f31 ~ absc, type="l", col="cadetblue")
 lines(f36 ~ absc, type = "l", col="blue")
 lines(f39 ~ absc, type = "l", col="purple")
 lines(mbs ~ absc, type = "l", col="black", lty=2)
@@ -65,13 +69,14 @@ lines(m52 ~ absc, type = "l", col="purple", lty=2)
 lines(m53 ~ absc, type = "l", col="orange", lty=2)
 legend(
 	"topleft",
-	c("F252","F-27","F-36","F-39","MBS", "M-40","M-49","M-52","M-53"),
-	col=c("black","red","blue","purple","black","red","blue","purple","orange"),
-	lwd=c(1,1,1,1,1,1,1,1,1),
-    lty=c(1,1,1,1,2,2,2,2,2),
+	c("F252","F-27","F-31","F-36","F-39","MBS", "M-40","M-49","M-52","M-53"),
+	col=c("black","red","cadetblue","blue","purple","black","red","blue","purple","orange"),
+	lwd=c(1,1,1,1,1,1,1,1,1,1),
+    lty=c(1,1,1,1,1,2,2,2,2,2),
 )
 
 f27rel <- f27 - f252
+f31rel <- f31 - f252
 f36rel <- f36 - f252
 f39rel <- f39 - f252
 #~ f27rel <- f27 - f252
@@ -91,6 +96,7 @@ plot(
 	ylab="Hauteur en cm",
 	main="Représentation pour chaque famille de la variation\n relative de la taille en fonction de l'année"
 )
+lines(f31rel ~ absc , teype="l"
 lines(f36rel ~ absc, type = "l", col="blue")
 lines(f39rel ~ absc, type = "l", col="purple")
 lines(m40rel ~ absc, type = "l", col="red", lty=2)
