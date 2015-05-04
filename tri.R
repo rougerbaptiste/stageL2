@@ -112,15 +112,17 @@ for(annee in annees){
 				}else{
 					ligne2 <- NA
 				}
+				
+				
 
 				population <- as.character(tab[ligne,"pop"])
 				
 				if(is.numeric(tab[ligne,"bloc"]) == T){ # même chose que pour la ligne
-					bloc <- as.factor(tab[ligne,"bloc"])
+					bloc <- tab[ligne,"bloc"]
 				}else{
 					bloc <- NA
 				}
-				
+
 				num <- hauteur
 				if(annee == 1998){ ligne2 <- NA } # il me semble redondant avec le traitement de la ligne au dessus
 				
@@ -158,7 +160,9 @@ for(annee in annees){
 						famille <- paste(fam[1],fam[2], sep="-")
 					}
 				}
+
 				spec <- c(annee ,generation , lignee, as.character(parent) , progeniteur, population, famille, bloc, ligne2 , as.character(num) , height)
+
 			}
 
 
