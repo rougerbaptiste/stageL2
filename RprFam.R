@@ -74,9 +74,9 @@ plot(
 	main="Représentation pour chaque famille de la variation\n de la taille en fonction de l'année"
 )
 lines(f27 ~ absc, type = "l", col="red")
-lines(f31 ~ absc, type="l", col="cadetblue")
-lines(f317 ~ absc, type="l",col="cadetblue3")
-lines(f318 ~ absc,type="l",col="cadetblue1")
+lines(f31 ~ absc, type="l", col="orange")
+lines(f317 ~ absc, type="l",col="chocolate")
+lines(f318 ~ absc,type="l",col="gold")
 lines(f36 ~ absc, type = "l", col="blue")
 lines(f39 ~ absc, type = "l", col="purple")
 lines(mbs ~ absc, type = "l", col="black", lty=2)
@@ -88,7 +88,7 @@ lines(m56 ~ absc,type = "l" , col="chocolate", lty=2)
 legend(
 	"topleft",
 	c("F252","F-27","F-31","F31-7","F31-8","F-36","F-39","MBS", "M-40","M-49","M-52","M-53","M-56"),
-	col=c("black","red","cadetblue","cadetblue3","cadetblue1","blue","purple","black","red","blue","purple","orange","chocolate"),
+	col=c("black","red","orange","chocolate","gold","blue","purple","black","red","blue","purple","orange","chocolate"),
 	lwd=c(1,1,1,1,1,1,1,1,1,1,1,1,1),
     lty=c(1,1,1,1,1,1,1,2,2,2,2,2,2),
 )
@@ -116,21 +116,32 @@ plot(
 	ylab="Hauteur en cm",
 	main="Représentation pour chaque famille de la variation\n relative de la taille en fonction de l'année"
 )
-lines(f31rel ~ absc , type="l", col ="cadetblue")
-lines(f317rel~ absc, type="l", col = "cadetblue3")
-lines(f318rel~ absc,type="l" , col = "cadetblue1")
+abline(lm(f27rel ~ absc), col="red")
+lines(f31rel ~ absc , type="l", col ="orange")
+#~ abline(lm(f31rel ~ absc), col="orange")
+lines(f317rel~ absc, type="l", col = "chocolate")
+abline(lm(f317rel ~ absc), col="chocolate")
+lines(f318rel~ absc,type="l" , col = "gold")
+abline(lm(f318rel ~ absc), col="gold")
 lines(f36rel ~ absc, type = "l", col="blue")
+abline(lm(f36rel ~ absc), col="blue")
 lines(f39rel ~ absc, type = "l", col="purple")
+abline(lm(f39rel ~ absc), col="purple")
 lines(m40rel ~ absc, type = "l", col="red", lty=2)
+abline(lm(m40rel ~ absc), col="red", lty=2)
 lines(m49rel ~ absc, type = "l", col="blue", lty=2)
+abline(lm(m49rel ~ absc), col="blue", lty=2)
 lines(m52rel ~ absc, type = "l", col="purple", lty=2)
+abline(lm(m52rel ~ absc), col="purple", lty=2)
 lines(m53rel ~ absc, type = "l", col="orange", lty=2)
+abline(lm(m53rel ~ absc), col="orange", lty=2)
 lines(m56rel ~ absc, type = "l", col="chocolate", lty=2)
+abline(lm(m56rel ~ absc), col="chocolate", lty=2)
 lines(temoin ~ absc, type = "l", col="black")
 legend(
 	"topleft",
 	c("F-27", "F31","F31-7","F31-8","F-36","F-39", "M-40","M-49","M-52","M-53","M-56"),
-	col=c("red", "cadetblue", "cadetblue3", "cadetblue1","blue","purple","red","blue","purple","orange","chocolate"),
+	col=c("red", "orange", "chocolate", "gold","blue","purple","red","blue","purple","orange","chocolate"),
 	lwd=c(1,1,1,1,1,1,1,1,1,1,1),
     lty=c(1,1,1,1,1,1,2,2,2,2,2),
 )
