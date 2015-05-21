@@ -1,0 +1,44 @@
+##########
+#
+# Ce fichier contient la liste et la fonction de tous les fichiers contenus
+# dans sdpreco_wd.
+#
+##########
+
+/hauteurs : dossier qui contient les données initiales de hauteur. Certains d'entre eux ont été modifiés de façon à être analysables efficacement par les scripts (cf. fichiers_de_travail.odt pour plus d'informations à ce sujet)
+
+CorrectedDatas.csv : fichier de données qui contient toutes les données corrigées de hauteurs de toutes les années
+
+hau_flo_1314.csv : fichier de données qui contient les données de hauteurs et de date de floraison plante à plante pour les années 2013 et 2014
+
+hauteur-**.csv : fichiers de données qui contiennent les données brutes standardisées pour chaque année indépendament
+
+HauteursFinal.csv : fichier de données qui contient les données brutes standardisées pour toutes les années
+
+pedigree.csv : fichier de données qui contient le pedigree de toutes les plantes semées
+
+sdpreco_PEDIGREE_F252.csv : fichier de données qui contient le pedigree de la lignée F252
+
+sdpreco_PEDIGREE_MBS.csv : fichier de données qui contient le pedigree de la lignee MBS
+
+sdpreco_STcor_F252.csv : fichier de données qui contient les dates de floraison de la lignée F252
+
+sdpreco_STcor_MBS.csv : fichier de données qui contient les dates de floraison de la lignée MBS
+
+aggregate.R : script dont la fonction est de rassembler les fichiers hauteur-**.csv en un seul fichier (HauteursFinal.csv)
+
+cor_indiv.R : script dont la fonction est de calculer les coefficients de corrélation plante à plante pour les années 2013 et 2014 pour les familles, les populations et sur l'ensemble de la lignée, et de les afficher dans des fichiers .pdf
+
+DataCorrectv2.R : script dont la fonction est de corriger les données contenues dans HauteursFinal.csv pour l'effet bloc et l'effet année. Il affiche également dans un fichier .pdf les boxplot de la hauteur en fonction de l'année avec les droites de régression.
+
+Hauflo.R : script dont la fonction est d'afficher dans un fichier .pdf la représentation de la hauteur en fonction de la date de floraison
+
+1-Liste_des_fichiers.txt : présent fichier qui donne la liste et la fonction de tous les fichiers ayant permis la réalisation du stage
+
+RprFam.R : fichier qui représente dans un fichier .pdf la hauteur des plantes de chaque famille au cours du temps
+
+RprPop.R : fichier qui représente dans un fichier .pdf la hauteur des plantes de chaque population au cours du temps
+
+tri.R : script dont la fonction est de récupérer les données initiales de hauteurs dans les fichiers source et de créer par année un fichier de hauteur standardisé contenant toutes les informations nécessaires (fichiers hauteur-**.csv)
+
+fichiers_de_travail.odt : fichier contenant la liste des modifications effectuées sur les données initiales pour qu'elles puissent être utilisées par le script tri.R

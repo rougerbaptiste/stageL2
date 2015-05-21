@@ -1,6 +1,6 @@
 rm(list=ls()) # on supprime tous les éléments de R
 
-donnees1 <- read.table("HauteursFinal.csv", header = T, sep=";") # on charge les données de hauteurs
+donnees1 <- read.table("CorrectedDatas.csv", header = T, sep=";") # on charge les données de hauteurs
 donnees <- data.frame(donnees1)
 
 moyennes <- aggregate(donnees$hauteur,by=list(donnees$année,donnees$fam),mean) # on aggrège les moyennes des données de hauteurs par année et par famille
@@ -63,7 +63,7 @@ m56 <- c(m56 , rep(NA,9)) # on rajoute des NA à la fin pour compléter les ann�
 absc <- 1998:2014 #absc est l'abscisse du graphe, à laquelle on retire 2011
 absc <- absc[-14]
 
-pdf("plot_fam-dist.pdf", onefile=T)
+#~ pdf("plot_fam-dist.pdf", onefile=T)
 plot(
 	f252 ~ absc ,
 	type = "l" , 
@@ -145,4 +145,4 @@ legend(
 	lwd=c(1,1,1,1,1,1,1,1,1,1,1),
     lty=c(1,1,1,1,1,1,2,2,2,2,2),
 )
-dev.off()
+#~ dev.off()
